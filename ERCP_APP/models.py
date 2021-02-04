@@ -4,6 +4,7 @@ from django.contrib.auth.models import PermissionsMixin
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 
+
 from .managers import CustomUserManager
 from django.db import models
 
@@ -11,6 +12,8 @@ from django.db import models
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     #Add fields here
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
@@ -46,7 +49,7 @@ DURATION=(
 )
 
 
-class CardDetails(models.Model):
+class CardDetail(models.Model):
     user_id = models.ForeignKey(
         to=User, on_delete=models.CASCADE, null=True, related_name='card_details')
     user_name = models.CharField(max_length=200, null=False, blank=False, unique=True)
@@ -62,21 +65,23 @@ class CardDetails(models.Model):
     district = models.CharField(max_length=50, null=False, blank=False)
     state = models.CharField(max_length=50, null=False, blank=False)
     journey_from = models.CharField(max_length=50, null=False, blank=False)
-    journey_to = models.CharField(max_length=50, null=False, blank=False)
+    journey_to = models.CharField(max_length=50, null=False, blank=False, default='Matunga Road')
     via = models.CharField(max_length=50, null=True, blank=True)
     railway_line = models.CharField(max_length=100, null=False, blank=False, choices=RAILWAY_LINE)
 
     def __str__(self):
         return self.user_name
+    
 
-class FormDetails(models.Model):
-     user_id = models.ForeignKey(
-        to=User, on_delete=models.CASCADE, null=True, related_name='form_details')
+class FormDetail(models.Model):
+     
+     user_card = models.ForeignKey(
+        to=CardDetail, on_delete=models.CASCADE, null=True, related_name='u_name')
      railway_class = models.CharField(max_length=100, null=False, blank=False, choices=RAILWAY_CLASS)
      duration = models.CharField(max_length=100, null=False, blank=False, choices=DURATION)
      issue_date = models.DateTimeField(default=timezone.now)
      applied_date = models.DateTimeField(default=timezone.now)
      status = models.BooleanField(default=False)
 
-     def __str__(self):
-        return self.status
+    #  def __str__(self):
+        # return self.user_name
