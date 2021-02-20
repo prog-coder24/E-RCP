@@ -15,6 +15,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
+    has_card = models.BooleanField(default=False, null=True,blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -57,7 +58,7 @@ class CardDetail(models.Model):
     academic_class = models.CharField(max_length=8, null=False, blank=False)
     roll_no = models.IntegerField(null=False, blank=False, unique=True)
     division = models.IntegerField(null=False, blank=False)
-    date_of_birth = models.DateField(max_length=50, null=False, blank=False)
+    date_of_birth = models.DateField(null=False, blank=False)
     years = models.IntegerField(null=False, blank=False)
     months = models.IntegerField(null=False, blank=False)
     residential_addr = models.CharField(max_length=755, null=False, blank=False)

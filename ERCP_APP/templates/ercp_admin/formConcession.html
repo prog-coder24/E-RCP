@@ -1,0 +1,44 @@
+{% extends 'lognav.html' %}{% load static %} {% block body %}
+<div class="container">
+  <h3 class="text-center p-4 mb-5 text-uppercase">Apply For Concession</h3>
+  <div class="form-group">
+    <label for="input11">Student Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input11"
+      placeholder=""
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="input4">Railway Line</label>
+    <select id="input4" class="form-control" required>
+      <option selected>Select...</option>
+      <option>Central Line</option>
+      <option>Western Line</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="input4">Duration</label>
+    <select id="input4" class="form-control" required>
+      <option selected>Select...</option>
+      <option>Monthly</option>
+      <option>Quaterly</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="input11">Issue Date</label>
+    <input
+      type="date"
+      class="form-control"
+      id="input11"
+      placeholder=""
+      required
+    />
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary my-5">APPLY</button>
+  </div>
+</div>
+{% endblock %}

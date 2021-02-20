@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from .models import *
+from .forms import *
 
 # Create your views here.
 def home(request):
@@ -19,6 +21,16 @@ def logout_user(request):
 @login_required(login_url='/login/')
 def option(request):
     return render(request, 'ercp_admin/option.html')
+
+@login_required(login_url='/login/')
+def card_form(request):
+    card = CardDetail.objects.all()
+    return render(request, 'ercp_admin/formCard.html',{'card':card})
+
+
+@login_required(login_url='/login/')
+def concession_form(request):
+    return render(request, 'ercp_admin/formConcession.html')
 
 def authenticate_user(request):
 
