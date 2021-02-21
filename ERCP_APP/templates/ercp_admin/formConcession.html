@@ -1,44 +1,38 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
 <div class="container">
-  <h3 class="text-center p-4 mb-5 text-uppercase">Apply For Concession</h3>
-  <div class="form-group">
-    <label for="input11">Student Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="input11"
-      placeholder=""
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="input4">Railway Line</label>
-    <select id="input4" class="form-control" required>
-      <option selected>Select...</option>
-      <option>Central Line</option>
-      <option>Western Line</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="input4">Duration</label>
-    <select id="input4" class="form-control" required>
-      <option selected>Select...</option>
-      <option>Monthly</option>
-      <option>Quaterly</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="input11">Issue Date</label>
-    <input
-      type="date"
-      class="form-control"
-      id="input11"
-      placeholder=""
-      required
-    />
-  </div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-primary my-5">APPLY</button>
-  </div>
+  <h4 class="text-center p-4 mb-5 text-uppercase">Apply For Concession</h4>
+  <form enctype="multipart/form-data" action="/add_concession/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="input2">Railway Class</label>
+      <select id="input2" class="form-control" name="railway_class" required>
+        <option selected>Select...</option>
+        <option>First Class</option>
+        <option>Second Class</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="input3">Duration</label>
+      <select id="input3" class="form-control" name="duration" required>
+        <option selected>Select...</option>
+        <option>Monthly</option>
+        <option>Quaterly</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="input4">Issue Date</label>
+      <input
+        type="date"
+        class="form-control"
+        name="issue_date"
+        id="input4"
+        placeholder=""
+        required
+      />
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary my-5">APPLY</button>
+    </div>
+  </form>
 </div>
 {% endblock %}

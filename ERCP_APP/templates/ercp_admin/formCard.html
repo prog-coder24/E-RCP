@@ -1,15 +1,17 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
 <div class="container">
-  <h3 class="p-4 mb-5 text-center text-uppercase">
+  <h4 class="p-4 mb-5 text-center text-uppercase">
     Railway Concession Card For The Academic Year 2020-2021
-  </h3>
-  <form>
+  </h4>
+  <form enctype="multipart/form-data" action="/add_card/" method="POST">
+    {% csrf_token %}
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="input1">Surname</label>
         <input
           type="text"
           class="form-control"
+          name="surname"
           id="input1"
           placeholder=""
           required
@@ -20,6 +22,7 @@
         <input
           type="text"
           class="form-control"
+          name="own_name"
           id="input2"
           placeholder=""
           required
@@ -30,6 +33,7 @@
         <input
           type="text"
           class="form-control"
+          name="fathers_name"
           id="input3"
           placeholder=""
           required
@@ -38,7 +42,7 @@
     </div>
     <div class="form-group">
       <label for="input4">Category</label>
-      <select id="input4" class="form-control" required>
+      <select id="input4" class="form-control" name="category" required>
         <option selected>Select...</option>
         <option>OPEN</option>
         <option>SC</option>
@@ -53,6 +57,7 @@
         <input
           type="text"
           class="form-control"
+          name="academic_class"
           id="input5"
           placeholder=""
           required
@@ -63,6 +68,7 @@
         <input
           type="number"
           class="form-control"
+          name="roll_no"
           id="input6"
           placeholder=""
           required
@@ -73,6 +79,7 @@
         <input
           type="number"
           class="form-control"
+          name="div"
           id="input7"
           placeholder=""
           required
@@ -85,6 +92,7 @@
         <input
           type="date"
           class="form-control"
+          name="dob"
           id="input8"
           placeholder=""
           required
@@ -95,6 +103,7 @@
         <input
           type="number"
           class="form-control"
+          name="years"
           id="input9"
           placeholder="Age in years"
           required
@@ -105,6 +114,7 @@
         <input
           type="number"
           class="form-control"
+          name="months"
           id="input10"
           placeholder=""
           required
@@ -116,6 +126,7 @@
       <input
         type="text"
         class="form-control"
+        name="addr"
         id="input11"
         placeholder=""
         required
@@ -124,11 +135,23 @@
     <div class="form-row">
       <div class="form-group col-md-8">
         <label for="input12">City</label>
-        <input type="text" class="form-control" id="input12" required />
+        <input
+          type="text"
+          class="form-control"
+          id="input12"
+          name="city"
+          required
+        />
       </div>
       <div class="form-group col-md-4">
         <label for="input14">Zip</label>
-        <input type="text" class="form-control" id="input14" required />
+        <input
+          type="text"
+          class="form-control"
+          id="input14"
+          name="zip_code"
+          required
+        />
       </div>
     </div>
     <div class="form-row">
@@ -137,6 +160,7 @@
         <input
           type="text"
           class="form-control"
+          name="taluka"
           id="input15"
           placeholder=""
           required
@@ -147,6 +171,7 @@
         <input
           type="text"
           class="form-control"
+          name="district"
           id="input16"
           placeholder=""
           required
@@ -157,22 +182,38 @@
         <input
           type="text"
           class="form-control"
+          name="state"
           id="input17"
           placeholder=""
           required
         />
       </div>
     </div>
+    <div class="form-group">
+      <label for="input4">Railway Line</label>
+      <select id="input4" class="form-control" name="railway_line" required>
+        <option selected>Select...</option>
+        <option>Central Railways</option>
+        <option>Western Railways</option>
+      </select>
+    </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="input18">Journey From</label>
-        <input type="text" class="form-control" id="input18" required />
+        <input
+          type="text"
+          class="form-control"
+          id="input18"
+          name="jour_from"
+          required
+        />
       </div>
       <div class="form-group col-md-4">
         <label for="input19">Journey to</label>
         <input
           type="text"
           class="form-control"
+          name="jour_to"
           id="input19"
           value="Matunga Road"
           readonly
@@ -181,11 +222,21 @@
       </div>
       <div class="form-group col-md-4">
         <label for="input20">via</label>
-        <input type="text" class="form-control" id="input20" />
+        <input type="text" class="form-control" id="input20" name="via" />
       </div>
     </div>
+    <div class="alert alert-info my-5" role="alert">
+      <h6 class="alert-heading my-3">NOTE:</h6>
+      <p>
+        1. Students will usually get Quaterly Railway Concession.<br />
+        2. This card is valid for the current academic year only.<br />
+        3. Students should produce this card only once, so before submitting
+        check if all the details are properly filled.<br />
+        4. Change of station is not allowed without proper documents.
+      </p>
+    </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary my-5">SUBMIT</button>
+      <button type="submit" class="btn btn-primary my-4">SUBMIT</button>
     </div>
   </form>
 </div>

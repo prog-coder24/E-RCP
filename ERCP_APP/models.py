@@ -62,6 +62,8 @@ class CardDetail(models.Model):
     years = models.IntegerField(null=False, blank=False)
     months = models.IntegerField(null=False, blank=False)
     residential_addr = models.CharField(max_length=755, null=False, blank=False)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    zip_code = models.IntegerField(null=True, blank=True)
     taluka = models.CharField(max_length=50, null=False, blank=False)
     district = models.CharField(max_length=50, null=False, blank=False)
     state = models.CharField(max_length=50, null=False, blank=False)
@@ -77,7 +79,7 @@ class CardDetail(models.Model):
 class FormDetail(models.Model):
      
      user_card = models.ForeignKey(
-        to=CardDetail, on_delete=models.CASCADE, null=True, related_name='u_name')
+        to=CardDetail, on_delete=models.CASCADE, null=True, related_name='ucard')
      railway_class = models.CharField(max_length=100, null=False, blank=False, choices=RAILWAY_CLASS)
      duration = models.CharField(max_length=100, null=False, blank=False, choices=DURATION)
      issue_date = models.DateTimeField(default=timezone.now)
