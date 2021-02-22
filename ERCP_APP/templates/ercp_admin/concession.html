@@ -1,3 +1,5 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
 <h3 class="text-center">Your Concession</h3>
-{% endblock %}
+{% for c in concessions %}
+<p>{{c.user_card.user_name}}</p>
+{% endfor %} {% endblock %}

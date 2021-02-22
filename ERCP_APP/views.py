@@ -11,6 +11,12 @@ def home(request):
     return render(request,'index.html')
 
 
+def lognav(request,pk):
+
+    card = CardDetail.objects.get(pk=pk)
+    return render(request,'lognav.html',{'card':card})
+
+
 def login_user(request):
     return render(request, 'ercp_admin/login.html')
 
@@ -27,7 +33,9 @@ def option(request):
 
 @login_required(login_url='/login/')
 def card_form(request):
-    return render(request, 'ercp_admin/formCard.html')
+
+    uname = CardDetail.objects.all()
+    return render(request, 'ercp_admin/formCard.html',{'uname':uname})
 
 
 @login_required(login_url='/login/')
@@ -59,12 +67,14 @@ def add_card(request):
 
         CardDetail.objects.create(user_id=request.user, user_name=name, category=category, academic_class=academic_class, roll_no=roll_no, division=div, date_of_birth=dob, years=years, months=months, residential_addr=addr, city=city, zip_code=zip_code, taluka=taluka, district=district, state=state, journey_from=jour_from, journey_to=jour_to, via=via,railway_line=railway_line)
 
-        return redirect(student_card)
+        return redirect(option)
 
 
 @login_required(login_url='/login/')
 def student_card(request):
-    return render(request, 'ercp_admin/card.html')
+
+    card = CardDetail.objects.get(user_id=request.user)
+    return render(request, 'ercp_admin/card.html', {'card':card})
 
         
 @login_required(login_url='/login/')
@@ -82,14 +92,18 @@ def add_concession(request):
         railway_class = request.POST.get('railway_class')
         duration = request.POST.get('duration')
         issue_date = request.POST.get('issue_date')
+        user_card = CardDetail.objects.get(user_id=request.user)
 
-        FormDetail.objects.create(railway_class=railway_class, duration=duration, issue_date=issue_date)
+        FormDetail.objects.create(user_card=user_card, railway_class=railway_class, duration=duration, issue_date=issue_date)
         return redirect(student_concession)
 
 
 @login_required(login_url='/login/')
 def student_concession(request):
-    return render(request, 'ercp_admin/concession.html')
+
+    user_card = CardDetail.objects.get(user_id=request.user)
+    concessions = FormDetail.objects.filter(user_card=user_card)
+    return render(request, 'ercp_admin/concession.html', {'concessions':concessions})
 
 
 def authenticate_user(request):

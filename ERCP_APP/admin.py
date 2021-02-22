@@ -30,11 +30,18 @@ class CardDetailsAdmin(admin.ModelAdmin):
     list_display = ('user_name','roll_no','residential_addr',)
     readonly_fields = ('journey_to',)
 
-# class FormDetailsAdmin(admin.ModelAdmin):
-    # list_display = ('',)
+class FormDetailsAdmin(admin.ModelAdmin):
+     list_display = ('user_card','duration','issue_date','railway_class')
+    #  fieldsets = (
+    #     ('Concession Information', {
+    #      'fields': ('duration','issue_date','railway_class')}),
+        
+    # )
+    #  ordering = ('issue_date')
+
 
 admin.site.register(User, UserAdmin)
 admin.site.register(CardDetail, CardDetailsAdmin)
-admin.site.register(FormDetail)
+admin.site.register(FormDetail, FormDetailsAdmin)
 admin.site.unregister(Group)
 

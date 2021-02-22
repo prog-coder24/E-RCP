@@ -87,4 +87,6 @@ class FormDetail(models.Model):
      status = models.BooleanField(default=False)
 
     #  def __str__(self):
-        # return self.user_name
+    #     return self.user_card.user_name
+  
+    
