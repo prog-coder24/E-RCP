@@ -9,11 +9,11 @@ class UserAdmin(UserAdmin):
     add_form = UserCreationForm
     form = UserChangeForm
     model = User
-    list_display = ('email', 'is_staff', 'is_active','date_joined')
+    list_display = ('email', 'is_staff', 'is_active','date_joined','has_card')
     list_filter = ('email',)
     fieldsets = (
         ('Personal Information', {
-         'fields': ('email','is_staff', 'is_active','date_joined')}),
+         'fields': ('email','is_staff', 'is_active','date_joined','has_card')}),
         
     )
     add_fieldsets = (
@@ -31,13 +31,17 @@ class CardDetailsAdmin(admin.ModelAdmin):
     readonly_fields = ('journey_to',)
 
 class FormDetailsAdmin(admin.ModelAdmin):
-     list_display = ('user_card','duration','issue_date','railway_class')
-    #  fieldsets = (
-    #     ('Concession Information', {
-    #      'fields': ('duration','issue_date','railway_class')}),
-        
-    # )
-    #  ordering = ('issue_date')
+     list_display = ('Name','journey_from','via','railway_class','duration','issue_date','status')
+     list_filter = ('applied_date',)
+     ordering = ('applied_date',)
+
+     def Name(self, obj):
+        return obj.user_card.user_name
+     def journey_from(self, obj):
+        return obj.user_card.journey_from
+     def via(self, obj):
+        return obj.user_card.via
+     
 
 
 admin.site.register(User, UserAdmin)

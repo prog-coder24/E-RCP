@@ -1,4 +1,11 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
 <h3 class="text-center">Your Card</h3>
-<h6>{{ card.user_name }}</h6>
+<div class="container my-5">
+  <p>Name: {{ card.user_name }}</p>
+  <p>
+    Residential Address: {{ card.residential_addr }}, {{ card.city }},
+    {{card.zip_code }}
+  </p>
+  <p>Roll No: {{ card.roll_no }}</p>
+</div>
 {% endblock %}

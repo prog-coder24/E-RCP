@@ -1,5 +1,41 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
-<h3 class="text-center">Your Concession</h3>
-{% for c in concessions %}
-<p>{{c.user_card.user_name}}</p>
-{% endfor %} {% endblock %}
+
+<div
+  class="table-responsive container table-hover my-5"
+  data-aos="fade"
+  data-aos-duration="1000"
+>
+  <h3 class="text-center mb-5">Your Concessions</h3>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Index No.</th>
+        <th scope="col">Journey From</th>
+        <th scope="col">via</th>
+        <th scope="col">Railway Class</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Issue Date</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in concessions %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ c.user_card.journey_from }}</td>
+        <td>{{ c.user_card.via }}</td>
+        <td>{{ c.railway_class }}</td>
+        <td>{{ c.duration }}</td>
+        <td>{{ c.issue_date }}</td>
+        {% if c.status == True %}
+        <td style="color: green">Approved</td>
+        {% else %}
+        <td style="color: red">Pending</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

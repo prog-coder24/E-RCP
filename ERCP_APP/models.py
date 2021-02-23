@@ -86,7 +86,7 @@ class FormDetail(models.Model):
      applied_date = models.DateTimeField(default=timezone.now)
      status = models.BooleanField(default=False)
 
-    #  def __str__(self):
-    #     return self.user_card.user_name
+     def __str__(self):
+        return self.user_card.user_name
   
     
