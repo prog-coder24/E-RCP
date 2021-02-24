@@ -1,7 +1,7 @@
 {% extends 'index.html' %}{% load static %} {% block body %}
-<div class="container login-form my-3">
+<div class="container login-form mt-5">
   <form method="POST" action="/success/">
-    <h3 class="mb-3">Welcome User, Login to continue</h3>
+    <h3 class="mb-4">Welcome User, Login to continue</h3>
     {% csrf_token %} {% if error %}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       {{ error }}

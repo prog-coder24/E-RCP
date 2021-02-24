@@ -19,42 +19,44 @@
     <title>E-RCP</title>
   </head>
   <body>
-    <div class="container-fluid index-navbar">
-      <nav class="navbar navbar-expand-lg navbar-light p-3 mb-5 container">
-        <a class="navbar-brand index-navbrand" href="/"
-          ><i class="fas fa-train train-icon"></i> ERCP</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="css-selector">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg p-3 mb-5">
+          <a class="navbar-brand" href="/"
+            ><i class="fas fa-train train-icon"></i> ERCP</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/cardForm/">Card </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/student_card/">Your Card </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/concessionForm/">Apply Concession </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/logout/">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/login/">Login </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
-    <div>{% block body %}{% endblock %}</div>
+    <div class="header-title">
+      <h1 class="text-center">E-Railway<br />Concession Portal</h1>
+    </div>
+
     <!-- <div class="footer">
       <p class="m-auto">
         © Copyright 2021 E-Railway Concession Portal, All rights reserved
