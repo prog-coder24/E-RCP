@@ -83,6 +83,121 @@ body {
   font-size: 25px;
 }
 
+.op-head-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.op-title {
+  margin-top: 70px;
+}
+
+.op-title p {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.op-title button {
+  background-color: #635bff !important;
+  color: #fff;
+  border-radius: 27px;
+  padding: 4px 14px 4px 14px;
+}
+
+.op-title button:hover {
+  background-color: #070707 !important;
+  padding-right: 19px;
+  transition: 0.4s ease-in-out !important;
+}
+
+.op-title button i {
+  font-size: 12px;
+  margin: 0 0 0 2px !important;
+}
+
+.op-title h1 {
+  font-size: 45px;
+  letter-spacing: 1px;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 15s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+.op-pancake {
+  display: flex;
+  justify-content: space-between;
+}
+
+.op-box {
+  flex-basis: 300px;
+}
+
+.op-box i {
+  font-size: 40px;
+  color: #555abf;
+}
+
+.op-box p {
+  font-size: 19px;
+}
+
+.op-box h6 {
+  font-size: 20px;
+}
+
+.op-head-img {
+  width: 95% !important;
+  margin-bottom: 200px !important;
+}
+
+.op-wrapper {
+  padding: 150px 0 0 0;
+}
+
+.card-section img {
+  width: 75% !important;
+  box-shadow: 0 8px 15px 0 rgba(207, 200, 200, 21.5),
+    0 6px 20px 0 rgba(250, 348, 248, 21.5) !important;
+}
+
+.card-section p {
+  color: #4d5f70;
+  font-size: 18px;
+  padding: 10px 0 0 0;
+}
+
+.card-section h6 {
+  font-size: 19px;
+}
+
+.card-section a {
+  text-decoration: none !important;
+  font-size: 17px;
+  color: #555abf;
+  font-weight: bold;
+}
+
+.card-section a i {
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+.card-section a:hover {
+  color: #070707;
+  transition: 0.4s ease-in-out !important;
+}
+
 /* .css-selector {
   position: relative;
   display: block;
@@ -104,9 +219,12 @@ body {
     rgb(251, 169, 88) 40%,
     rgb(255, 37, 61) 30%
   );
-  width: 100%;
-  height: 900px;
-  clip-path: polygon(50% 0%, 100% 0, 100% 24%, 0 54%, 0 0);
+
+  height: 400px;
+  margin-bottom: -400px;
+  z-index: -1;
+  position: inherit;
+  clip-path: polygon(50% 0%, 100% 0, 100% 44%, 0 100%, 0 0);
   animation: AnimationName 16s ease infinite;
 }
 
