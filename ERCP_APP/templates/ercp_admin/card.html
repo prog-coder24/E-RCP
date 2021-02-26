@@ -1,11 +1,107 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
-<h3 class="text-center">Your Card</h3>
-<div class="container my-5">
-  <p>Name: {{ card.user_name }}</p>
-  <p>
-    Residential Address: {{ card.residential_addr }}, {{ card.city }},
-    {{card.zip_code }}
-  </p>
-  <p>Roll No: {{ card.roll_no }}</p>
+<div class="card-wrapper">
+  <div class="container">
+    <div class="card" style="width: 58rem">
+      <div class="card-body">
+        <h5 class="card-title text-center mt-2 mb-4">
+          <i class="fas fa-user text-right"></i>
+        </h5>
+        <div class="card-content-wrapper">
+          <div class="row">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              Name:
+            </div>
+            <div class="col-lg-9 card-text">{{ card.user_name }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              Category:
+            </div>
+            <div class="col-lg-9 card-text">{{ card.category }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              Residential Address:
+            </div>
+            <div class="col-lg-9 card-text">
+              {{ card.residential_addr }}, {{ card.city }}, {{ card.zip_code }}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              Academic class:
+            </div>
+            <div class="col-lg-9 card-text">{{ card.academic_class }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              date of birth:
+            </div>
+            <div class="col-lg-9 card-text">
+              {{ card.date_of_birth | date:'d/m/Y' }}
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              state:
+            </div>
+            <div class="col-lg-9 card-text">{{ card.state }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              Journey from:
+            </div>
+            <div class="col-lg-9 card-text">
+              {{ card.journey_from }} <b> to </b> {{ card.journey_to }}
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              via:
+            </div>
+            <div class="col-lg-9 card-text">{{ card.via }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-3 font-weight-bold text-uppercase card-head">
+              Railway line:
+            </div>
+            <div class="col-lg-9 card-text">{{ card.railway_line }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-2 font-weight-bold text-uppercase card-head">
+              Roll No:
+            </div>
+            <div class="col-lg-4 card-text">{{ card.roll_no }}</div>
+            <div class="col-lg-2 font-weight-bold text-uppercase card-head">
+              div:
+            </div>
+            <div class="col-lg-4 card-text">{{ card.division }}</div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-lg-2 font-weight-bold text-uppercase card-head">
+              Age in years:
+            </div>
+            <div class="col-lg-4 card-text">{{ card.years }}</div>
+            <div class="col-lg-2 font-weight-bold text-uppercase card-head">
+              months:
+            </div>
+            <div class="col-lg-4 card-text">{{ card.months }}</div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-2 font-weight-bold text-uppercase card-head">
+              Taluka:
+            </div>
+            <div class="col-lg-4 card-text">{{ card.taluka }}</div>
+            <div class="col-lg-2 font-weight-bold text-uppercase card-head">
+              district:
+            </div>
+            <div class="col-lg-4 card-text">{{ card.district }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

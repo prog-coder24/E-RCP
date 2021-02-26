@@ -5,7 +5,7 @@
   data-aos="fade"
   data-aos-duration="1000"
 >
-  <h3 class="text-center mb-5">Your Concessions</h3>
+  <h3 class="text-center mb-5">Applied Concessions</h3>
 
   <table class="table table-bordered">
     <thead>
@@ -27,7 +27,7 @@
         <td>{{ c.user_card.via }}</td>
         <td>{{ c.railway_class }}</td>
         <td>{{ c.duration }}</td>
-        <td>{{ c.issue_date }}</td>
+        <td>{{ c.issue_date | date:'d/m/Y' }}</td>
         {% if c.status == True %}
         <td style="color: green">Approved</td>
         {% else %}

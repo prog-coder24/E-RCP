@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6,6 +8,7 @@ body {
   background-color: #fff;
   color: #070707;
   margin-bottom: 150px;
+  font-family: "Open Sans", sans-serif;
 }
 
 * {
@@ -20,7 +23,7 @@ body {
   padding: 24px;
   text-align: center;
   color: #fff;
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -32,13 +35,13 @@ body {
 }
 
 .nav-link {
-  color: #fff;
+  color: #070707;
   font-weight: bold;
   font-size: 18px;
 }
 
 .navbar-brand {
-  color: #fff;
+  color: #070707;
   font-weight: bold;
   font-size: 27px !important;
 }
@@ -47,12 +50,19 @@ body {
   padding: 0 0 0 15px;
 }
 
+.navbar-brand:hover,
+.navbar-nav li {
+  color: #555abf;
+}
+
+/* index.html */
+
 .index-navbar {
   background: #fff;
   box-shadow: 0 4px 2px -2px rgba(224, 222, 222, 0.9);
 }
 
-.index-navbrand {
+.navbar-brand {
   font-size: 24px !important;
 }
 
@@ -68,20 +78,155 @@ body {
   color: #070707;
 }
 
-.header-title h1 {
-  margin-top: 0px !important;
-}
-
-.chakra-icon {
-  font-size: 40px;
-  color: #87bbfd;
-  border-radius: 50%;
-  padding: 5px;
+.index-navbar a:hover,
+.index-navbar li:hover {
+  color: #555abf !important;
 }
 
 .train-icon {
   font-size: 25px;
 }
+
+/* home.html */
+
+.header-title {
+  background: #555abf;
+
+  color: #fff;
+}
+
+.header-title h1 {
+  font-size: 50px;
+  text-align: center;
+  padding: 90px;
+  text-shadow: 2px 2px 2px rgb(34, 33, 33);
+}
+
+.header-title {
+  height: 450px;
+  margin-bottom: -400px;
+  z-index: -1;
+  position: inherit;
+  clip-path: polygon(100% 0, 100% 60%, 0 100%, 0 0);
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab,
+    #feab3a,
+    #ff3a3e,
+    #aa4fec
+  );
+  background-size: 400% 400%;
+  animation: gradient 14s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.home-op-wrapper {
+  padding: 180px 0 250px 0;
+}
+
+.span-grid h6 {
+  font-size: 20px;
+}
+
+.span-grid p {
+  font-size: 17px;
+}
+
+.span-col-1,
+.span-col-2 {
+  border-radius: 16px;
+  -webkit-box-shadow: 11px 35px 46px -6px rgba(201, 197, 201, 1);
+  -moz-box-shadow: 11px 35px 46px -6px rgba(201, 197, 201, 1);
+  box-shadow: 11px 35px 46px -6px rgba(201, 197, 201, 1);
+  border-radius: 15px;
+  padding: 60px;
+  float: none;
+}
+
+.span-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.span-col-1 {
+  grid-column: 3 / 11;
+}
+
+.span-col-2 {
+  margin-top: 80px;
+  grid-column: 3 / 11;
+}
+
+.span-grid a {
+  text-decoration: none !important;
+  font-size: 17px;
+  color: #555abf;
+  font-weight: bold;
+}
+
+.span-grid a i {
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+.span-grid a:hover {
+  color: #070707;
+  transition: 0.4s ease-in-out !important;
+}
+
+.op-pancake {
+  margin-top: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.op-box {
+  flex-basis: 300px;
+}
+
+.op-box i {
+  font-size: 40px;
+  color: #555abf;
+}
+
+.op-box p {
+  font-size: 19px;
+}
+
+.op-box h6 {
+  font-size: 20px;
+}
+
+.op-box:hover {
+  cursor: pointer !important;
+  background-color: #555abf;
+  opacity: 0.9;
+  border-radius: 0px !important;
+  color: #fff;
+  transition: 0.4s ease-in-out !important;
+  transform: scale(1.01) !important;
+  padding: 12px;
+}
+
+.op-box:hover i {
+  color: #070707;
+}
+
+/* #option.html */
 
 .op-head-box {
   display: grid;
@@ -134,108 +279,105 @@ body {
   }
 }
 
-.op-pancake {
-  display: flex;
-  justify-content: space-between;
-}
-
-.op-box {
-  flex-basis: 300px;
-}
-
-.op-box i {
-  font-size: 40px;
-  color: #555abf;
-}
-
-.op-box p {
-  font-size: 19px;
-}
-
-.op-box h6 {
-  font-size: 20px;
-}
-
 .op-head-img {
   width: 95% !important;
   margin-bottom: 200px !important;
 }
 
 .op-wrapper {
-  padding: 150px 0 0 0;
+  padding: 30px 0 80px 0;
 }
 
-.card-section img {
+.op-wrapper .container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.card-section img,
+.form-section img {
   width: 75% !important;
   box-shadow: 0 8px 15px 0 rgba(207, 200, 200, 21.5),
     0 6px 20px 0 rgba(250, 348, 248, 21.5) !important;
 }
 
-.card-section p {
+.card-section p,
+.form-section p {
   color: #4d5f70;
   font-size: 18px;
   padding: 10px 0 0 0;
 }
 
-.card-section h6 {
+.card-section h6,
+.form-section h6 {
   font-size: 19px;
 }
 
-.card-section a {
+.form-section img {
+  margin: 40px 0 0 120px;
+}
+
+.card-section a,
+.form-section a {
   text-decoration: none !important;
   font-size: 17px;
   color: #555abf;
   font-weight: bold;
 }
 
-.card-section a i {
+.card-section a i,
+.form-section a i {
   font-size: 13px;
   margin-left: 3px;
 }
 
-.card-section a:hover {
+.card-section a:hover,
+.form-section a:hover {
   color: #070707;
   transition: 0.4s ease-in-out !important;
 }
 
-/* .css-selector {
-  position: relative;
-  display: block;
-  width: inherit;
-  height: 100%;
-  opacity: 0;
-} */
+/* card.html */
 
-.css-selector {
-  background: linear-gradient(
-    70deg,
-    rgb(254, 172, 87) 10%,
-    rgb(170, 101, 235) 35%,
-    rgb(227, 186, 129) 100%,
-    rgb(145, 197, 253) 10%,
-    rgb(179, 96, 219) 30%,
-    rgb(255, 202, 87) 20%,
-    rgb(144, 213, 255) 60%,
-    rgb(251, 169, 88) 40%,
-    rgb(255, 37, 61) 30%
-  );
-
-  height: 400px;
-  margin-bottom: -400px;
-  z-index: -1;
-  position: inherit;
-  clip-path: polygon(50% 0%, 100% 0, 100% 44%, 0 100%, 0 0);
-  animation: AnimationName 16s ease infinite;
+.card-wrapper .container {
+  width: 45% !important;
+  max-width: 85% !important;
 }
 
-@keyframes AnimationName {
-  0% {
-    background-position: 94% 0%;
-  }
-  50% {
-    background-position: 87% 100%;
-  }
-  100% {
-    background-position: 84% 0%;
-  }
+.card {
+  background-color: #fff;
+  -webkit-box-shadow: 0 35px 20px rgb(219, 210, 210);
+  -moz-box-shadow: 0 35px 20px rgb(221, 217, 217);
+  box-shadow: 0 35px 20px rgb(221, 217, 217);
+}
+
+.card-title {
+  font-size: 70px;
+  color: #19191a;
+}
+
+.card-content-wrapper {
+  padding: 20px 15px 20px 15px;
+}
+
+.card-head {
+  font-size: 16px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #101011;
+}
+
+/* formConcession.html */
+
+.apply-button {
+  background-color: #635bff !important;
+  color: #fff;
+  border-radius: 27px !important;
+  padding: 5px 20px 5px 20px !important;
+}
+
+.apply-button:hover {
+  background-color: #070707 !important;
+  transition: 0.4s ease-in-out !important;
 }
