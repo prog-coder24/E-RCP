@@ -124,11 +124,11 @@ body {
 }
 
 .header-title .navbar-brand {
-  color: #555abf !important;
+  color: #dad7d7 !important;
 }
 
 .header-title .navbar-brand:hover {
-  color: #fff !important;
+  color: #555abf !important;
 }
 
 .header-title .navbar-brand i {
@@ -136,15 +136,15 @@ body {
 }
 
 .header-title .navbar-nav a {
-  color: #555abf !important;
+  color: #dad7d7 !important;
 }
 
 .header-title .navbar-nav a:hover {
-  color: #fff !important;
+  color: #555abf !important;
 }
 
 .header-title p {
-  font-size: 55px;
+  font-size: 60px;
   padding: 220px;
   font-weight: bold;
 }
@@ -373,9 +373,12 @@ body {
 
 .card-section img,
 .form-section img {
-  width: 75% !important;
-  box-shadow: 0 8px 15px 0 rgba(207, 200, 200, 1),
-    0 6px 20px 0 rgba(250, 348, 248, 1) !important;
+  width: 77% !important;
+  box-shadow: 0 8px 15px 0 rgba(233, 230, 230, 0.3),
+    0 6px 20px 0 rgba(192, 188, 188, 0.9) !important;
+  /* box-shadow: rgba(207, 200, 200, 1) 0px 50px 100px -20px,
+    rgba(207, 200, 200, 1) 0px 30px 60px -30px,
+    rgba(207, 200, 200, 1) 0px -2px 6px 0px; */
 }
 
 .card-section p,
@@ -390,8 +393,13 @@ body {
   font-size: 19px;
 }
 
+.card-section img {
+  transform: skewY(-11deg);
+}
+
 .form-section img {
-  margin: 40px 0 0 120px;
+  margin: 70px 0 0 100px;
+  transform: skewY(15deg);
 }
 
 .card-section a,
@@ -423,12 +431,11 @@ body {
 
 .card {
   background-color: #fff;
-  -webkit-box-shadow: 0 35px 20px rgb(219, 210, 210);
+  /* -webkit-box-shadow: 0 35px 20px rgb(219, 210, 210);
   -moz-box-shadow: 0 35px 20px rgb(221, 217, 217);
-  box-shadow: 0 35px 20px rgb(221, 217, 217);
-  /* box-shadow: rgba(225, 229, 231, 0.12) 0px 2px 4px 0px,
-    rgba(194, 199, 202, 0.32) 0px 2px 16px 0px; */
-  border-color: #555abf !important;
+  box-shadow: 0 35px 20px rgb(221, 217, 217); */
+  /* box-shadow: rgba(179, 179, 185, 0.5) 0px 7px 29px 0px; */
+  box-shadow: rgba(179, 179, 185, 0.9) 0px 3px 8px;
 }
 
 .card-title {
@@ -461,6 +468,10 @@ body {
 .apply-button:hover {
   background-color: #070707 !important;
   transition: 0.4s ease-in-out !important;
+}
+
+.table-responsive {
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 768px) {
@@ -543,6 +554,7 @@ body {
   .card-section img,
   .form-section img {
     width: 95% !important;
+    transform: skewY(0deg);
   }
   .card-section h6,
   .form-section h6 {
@@ -569,6 +581,7 @@ body {
   }
   .card {
     width: 100% !important;
+    border-color: #555abf !important;
   }
   .card-wrapper {
     margin: 40px 0 40px 0;
