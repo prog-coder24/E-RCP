@@ -11,6 +11,10 @@ def home(request):
     return render(request,'home.html')
 
 
+def about(request):
+    return render(request,'about.html')
+
+
 def lognav(request,pk):
 
     card = CardDetail.objects.get(pk=pk)

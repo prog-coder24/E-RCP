@@ -167,7 +167,7 @@ body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/static/img/train4.jpg");
   background-size: cover;
-  height: 930px;
+  height: 915px;
 }
 
 @keyframes gradient {
@@ -305,6 +305,10 @@ body {
   color: #070707;
 }
 
+.carousel {
+  margin: 0 auto !important;
+}
+
 /* #option.html */
 
 .op-head-box {
@@ -363,7 +367,7 @@ body {
 }
 
 .op-wrapper {
-  padding: 30px 0 80px 0;
+  padding: 100px 0 80px 0;
 }
 
 .op-wrapper .container {
@@ -376,9 +380,6 @@ body {
   width: 77% !important;
   box-shadow: 0 8px 15px 0 rgba(233, 230, 230, 0.3),
     0 6px 20px 0 rgba(192, 188, 188, 0.9) !important;
-  /* box-shadow: rgba(207, 200, 200, 1) 0px 50px 100px -20px,
-    rgba(207, 200, 200, 1) 0px 30px 60px -30px,
-    rgba(207, 200, 200, 1) 0px -2px 6px 0px; */
 }
 
 .card-section p,
@@ -394,7 +395,7 @@ body {
 }
 
 .card-section img {
-  transform: skewY(-11deg);
+  transform: skewY(-14deg);
 }
 
 .form-section img {
@@ -431,11 +432,9 @@ body {
 
 .card {
   background-color: #fff;
-  /* -webkit-box-shadow: 0 35px 20px rgb(219, 210, 210);
-  -moz-box-shadow: 0 35px 20px rgb(221, 217, 217);
-  box-shadow: 0 35px 20px rgb(221, 217, 217); */
-  /* box-shadow: rgba(179, 179, 185, 0.5) 0px 7px 29px 0px; */
-  box-shadow: rgba(179, 179, 185, 0.9) 0px 3px 8px;
+  -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.49);
+  box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.49);
 }
 
 .card-title {
@@ -472,6 +471,31 @@ body {
 
 .table-responsive {
   overflow-x: hidden;
+}
+
+/* about.html  */
+
+.about-head {
+  width: 60vw !important;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/static/img/about.jpg");
+}
+
+.about-head h3 {
+  margin-top: 400px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #fff;
+}
+
+.about-text {
+  margin-top: 400px;
+}
+
+.about-wrapper {
+  display: flex;
+  height: 100vh;
+  position: fixed;
 }
 
 @media screen and (max-width: 768px) {
@@ -586,8 +610,14 @@ body {
   .card-wrapper {
     margin: 40px 0 40px 0;
   }
+  .card-content-wrapper {
+    margin-top: 10px !important;
+  }
   .card-content-wrapper .row {
     margin-top: 12px !important;
+  }
+  .card h4 {
+    margin-bottom: 0 !important;
   }
   .header-title {
     height: 420px;
