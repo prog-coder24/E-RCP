@@ -70,7 +70,6 @@ def add_card(request):
         via = request.POST.get('via',None)
 
         CardDetail.objects.create(user_id=request.user, user_name=name, category=category, academic_class=academic_class, roll_no=roll_no, division=div, date_of_birth=dob, years=years, months=months, residential_addr=addr, city=city, zip_code=zip_code, taluka=taluka, district=district, state=state, journey_from=jour_from, journey_to=jour_to, via=via,railway_line=railway_line)
-        # user = User.objects.get(id=request.user.id)
         request.user.has_card = True
         request.user.save()
         return redirect(student_card)
@@ -96,7 +95,7 @@ def add_concession(request):
     if request.method == 'POST':
 
         if not request.user.has_card:
-            pass
+           return render(request, 'ercp_admin/formCard.html')
 
         railway_class = request.POST.get('railway_class')
         duration = request.POST.get('duration')

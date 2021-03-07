@@ -1,13 +1,25 @@
 {% extends 'index.html' %}{% load static %} {% block body %}
 <div class="about-wrapper">
   <div class="about-head text-center" style="background-color: #555abf">
-    <h3>About Us</h3>
+    <h3 data-aos="zoom-in" data-aos-duration="1000">About Us</h3>
   </div>
-  <div class="about-text text-center">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quas corporis
-    perferendis inventore quia mollitia quidem laborum soluta, facilis vero,
-    deleniti illum dolorem. Quod totam dicta dolores distinctio accusamus
-    minima.
+  <div
+    class="about-text text-center"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+  >
+    <div>
+      <img class="img-fluid" src="{% static 'img/goal1.svg'%}" alt="" />
+    </div>
+    <div>
+      <p>
+        Our mission is to lessen hours of work to receive concession and provide
+        an easy, reliable process. We provide authentication and approval to get
+        online access anytime anywhere. We even provide status after approving
+        concession application to the students. We work with a minimalistic team
+        and complete efforts.
+      </p>
+    </div>
   </div>
 </div>
 {% endblock %}

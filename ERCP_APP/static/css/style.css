@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 /* global styles start */
 
@@ -10,7 +10,7 @@ body {
   background-color: #fff;
   color: #070707;
   margin-bottom: 150px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif !important;
 }
 
 * {
@@ -46,7 +46,7 @@ body {
 .navbar-toggle {
   float: none;
   margin-right: 0;
-  background: #fff !important;
+  background: none !important;
   box-shadow: none !important;
   border: none !important;
   outline: none !important;
@@ -216,17 +216,18 @@ body {
 .span-grid {
   display: grid !important;
   grid-template-columns: repeat(12, 1fr) !important;
+  align-items: center;
 }
 
 .span-col-1 {
-  grid-column: 4 / 9 !important;
+  grid-column: 4 / 10 !important;
   padding: 50px;
 }
 
 .span-col-2 {
   margin-top: 70px;
   padding: 50px !important;
-  grid-column: 4 / 9 !important;
+  grid-column: 4 / 10 !important;
 }
 
 .span-grid a {
@@ -305,10 +306,6 @@ body {
   color: #070707;
 }
 
-.carousel {
-  margin: 0 auto !important;
-}
-
 /* #option.html */
 
 .op-head-box {
@@ -367,7 +364,12 @@ body {
 }
 
 .op-wrapper {
-  padding: 100px 0 80px 0;
+  padding: 30px 0 200px 0;
+}
+
+.op-wrapper h3 {
+  padding: 0 0 150px 0 !important;
+  font-weight: bold;
 }
 
 .op-wrapper .container {
@@ -392,14 +394,19 @@ body {
 .card-section h6,
 .form-section h6 {
   font-size: 19px;
+  letter-spacing: 1px;
 }
 
 .card-section img {
-  transform: skewY(-14deg);
+  transform: skewY(-13deg);
+}
+
+.form-section {
+  margin-top: 100px;
 }
 
 .form-section img {
-  margin: 70px 0 0 100px;
+  margin: 80px 0 0 100px;
   transform: skewY(15deg);
 }
 
@@ -434,7 +441,7 @@ body {
   background-color: #fff;
   -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.49);
-  box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.49);
+  box-shadow: -1px 6px 13px 0px rgba(68, 65, 65, 0.49);
 }
 
 .card-title {
@@ -462,6 +469,8 @@ body {
   color: #fff;
   border-radius: 27px !important;
   padding: 5px 20px 5px 20px !important;
+  outline: none !important;
+  border: none !important;
 }
 
 .apply-button:hover {
@@ -473,10 +482,14 @@ body {
   overflow-x: hidden;
 }
 
+.form-card {
+  margin-bottom: 100px;
+}
+
 /* about.html  */
 
 .about-head {
-  width: 60vw !important;
+  width: 90vw !important;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/static/img/about.jpg");
 }
@@ -489,13 +502,28 @@ body {
 }
 
 .about-text {
-  margin-top: 400px;
+  margin-top: 180px;
+  color: #070707;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-wrapper {
   display: flex;
   height: 100vh;
   position: fixed;
+}
+
+.about-text img {
+  width: 40%;
+}
+
+.about-text p {
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 768px) {
@@ -522,7 +550,8 @@ body {
   }
   .login-form h3,
   h4,
-  h3 {
+  h3,
+  .span-title {
     font-size: 20px !important;
   }
   label,
@@ -538,12 +567,8 @@ body {
   }
   .apply-button {
     font-size: 15px !important;
+    margin-bottom: 200px !important;
   }
-  /* .fa-navicon:before,
-  .fa-reorder:before,
-  .fa-bars:before {
-    content: none !important;
-  } */
   .nav {
     padding: 0 !important;
     margin-bottom: 0;
@@ -586,9 +611,7 @@ body {
     padding-top: 12px;
   }
   .card-section p,
-  .form-section p {
-    font-size: 15px;
-  }
+  .form-section p,
   .card-section a,
   .form-section a {
     font-size: 15px;
@@ -606,6 +629,7 @@ body {
   .card {
     width: 100% !important;
     border-color: #555abf !important;
+    margin-bottom: 100px !important;
   }
   .card-wrapper {
     margin: 40px 0 40px 0;
@@ -647,5 +671,58 @@ body {
   }
   .op-box i {
     font-size: 30px;
+  }
+  .span-grid {
+    display: block !important;
+  }
+  .home-op-wrapper {
+    padding: 50px 0 50px 0;
+  }
+  .home-op-wrapper h6 {
+    font-weight: bold;
+  }
+  .span-grid h6,
+  .span-grid p,
+  .span-grid a {
+    font-size: 16px;
+  }
+  .span-grid a i {
+    font-size: 11px;
+  }
+  .span-col-1,
+  .span-col-2 {
+    padding: 40px;
+  }
+  .footer p {
+    font-size: 14px;
+  }
+  .footer {
+    padding: 20px;
+  }
+  .about-head {
+    width: 100% !important;
+  }
+  .about-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: static !important;
+  }
+  .about-head h3 {
+    font-size: 35px !important;
+    margin-top: 50px;
+    padding: 130px;
+  }
+  .about-text {
+    margin-top: 50px;
+    font-size: 15px;
+  }
+  .about-text p {
+    margin: 20px 0 50px 0 !important;
+  }
+  .about-text img {
+    width: 55% !important;
+  }
+  .op-wrapper h3 {
+    padding: 30px 0 50px 0 !important;
   }
 }
