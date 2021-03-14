@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from datetime import datetime, timedelta 
 from .models import *
 from .forms import *
+from django.utils import timezone
 
 # Create your views here.
 def home(request):
@@ -37,7 +39,6 @@ def option(request):
 
 @login_required(login_url='/login/')
 def card_form(request):
-
     uname = CardDetail.objects.all()
     return render(request, 'ercp_admin/formCard.html',{'uname':uname})
 
@@ -102,9 +103,18 @@ def add_concession(request):
         issue_date = request.POST.get('issue_date')
         user_card = CardDetail.objects.get(user_id=request.user)
 
+        date_format = "%Y-%m-%d"
+        dt_now = datetime.strptime(str(datetime.now().date()), date_format)
+        issue_date_ts = datetime.strptime(str(issue_date), date_format)
+        timediff = issue_date_ts - dt_now
 
-        FormDetail.objects.create(user_card=user_card, railway_class=railway_class, duration=duration, issue_date=issue_date)
-        return redirect(student_concession)
+        if timediff.days <= 3 and timediff.days > 0:
+            FormDetail.objects.create(user_card=user_card, railway_class=railway_class, duration=duration, issue_date=issue_date)
+            return redirect(student_concession)
+        else:
+             return render(request, 'ercp_admin/formConcession.html', {"warning": "Issue date should be between the next 3 days."})
+            
+
 
 
 @login_required(login_url='/login/')

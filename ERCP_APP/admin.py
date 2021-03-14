@@ -3,6 +3,9 @@ from .models import *
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User, Group
 from .forms import *
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
+from import_export.fields import Field
 
 # Register your models here.
 class UserAdmin(UserAdmin):
@@ -30,7 +33,27 @@ class CardDetailsAdmin(admin.ModelAdmin):
     list_display = ('user_name','roll_no','residential_addr',)
     readonly_fields = ('journey_to',)
 
-class FormDetailsAdmin(admin.ModelAdmin):
+class FDResource(resources.ModelResource):
+    Name = Field()
+    journey_from = Field()
+    via = Field()
+
+    class Meta:
+        model = FormDetail
+        fields = ('railway_class', 'duration', 'issue_date')
+
+    def dehydrate_Name(self, FormDetail):
+        return FormDetail.user_card.user_name
+    
+    def dehydrate_journey_from(self, FormDetail):
+        return FormDetail.user_card.journey_from
+    
+    def dehydrate_via(self, FormDetail):
+        return FormDetail.user_card.via
+
+
+class FormDetailsAdmin(ImportExportModelAdmin):
+     resource_class = FDResource
      list_display = ('Name','journey_from','via','railway_class','duration','issue_date','status')
      list_filter = ('applied_date',)
      ordering = ('applied_date',)
