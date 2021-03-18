@@ -12,12 +12,16 @@
   </div>
   {% endif %}
   <h4 class="text-center p-4 mb-5 text-uppercase">Apply For Concession</h4>
-  <form enctype="multipart/form-data" action="/add_concession/" method="POST">
+  <form
+    enctype="multipart/form-data"
+    action="/update_concession/{{con.id}}"
+    method="POST"
+  >
     {% csrf_token %}
     <div class="form-group">
       <label for="input2">Railway Class</label>
       <select id="input2" class="form-control" name="railway_class" required>
-        <option selected value="">Select...</option>
+        <option selected value="{{con.railway_class}}">Select...</option>
         <option>First Class</option>
         <option>Second Class</option>
       </select>
@@ -25,7 +29,7 @@
     <div class="form-group">
       <label for="input3">Duration</label>
       <select id="input3" class="form-control" name="duration" required>
-        <option selected value="">Select...</option>
+        <option selected value="{{con.duration}}">Select...</option>
         <option>Monthly</option>
         <option>Quaterly</option>
       </select>
@@ -39,6 +43,7 @@
         id="input4"
         placeholder=""
         required
+        value="{{concession.issue_date}}"
       />
     </div>
     <div class="text-center">

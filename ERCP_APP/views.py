@@ -17,12 +17,6 @@ def about(request):
     return render(request,'about.html')
 
 
-def lognav(request,pk):
-
-    card = CardDetail.objects.get(pk=pk)
-    return render(request,'lognav.html',{'card':card})
-
-
 def login_user(request):
     return render(request, 'ercp_admin/login.html')
 
@@ -48,6 +42,7 @@ def add_card(request):
 
     if request.method == 'POST':
 
+
         own_name = request.POST.get('own_name')
         fathers_name = request.POST.get('fathers_name')
         surname = request.POST.get('surname')
@@ -70,17 +65,34 @@ def add_card(request):
         jour_to = request.POST.get('jour_to')
         via = request.POST.get('via',None)
 
-        CardDetail.objects.create(user_id=request.user, user_name=name, category=category, academic_class=academic_class, roll_no=roll_no, division=div, date_of_birth=dob, years=years, months=months, residential_addr=addr, city=city, zip_code=zip_code, taluka=taluka, district=district, state=state, journey_from=jour_from, journey_to=jour_to, via=via,railway_line=railway_line)
-        request.user.has_card = True
-        request.user.save()
-        return redirect(student_card)
+        city_source = city.split()
+        new_list = []
+        for c in city_source:
+            new_list.append(c.lower())
+
+        if any(c in jour_from.lower() for c in new_list):
+            CardDetail.objects.create(user_id=request.user, user_name=name, category=category, academic_class=academic_class, roll_no=roll_no, division=div, date_of_birth=dob, years=years, months=months, residential_addr=addr, city=city, zip_code=zip_code, taluka=taluka, district=district, state=state, journey_from=jour_from, journey_to=jour_to, via=via,railway_line=railway_line)
+            request.user.has_card = True
+            request.user.save()
+            return redirect(student_card)
+        else:
+            return render(request, 'ercp_admin/formCard.html', {"warning": "Entered City should match with Source station"} )
+
 
 
 @login_required(login_url='/login/')
 def student_card(request):
 
-    card = CardDetail.objects.get(user_id=request.user)
-    return render(request, 'ercp_admin/card.html', {'card':card})
+    try:
+        card = CardDetail.objects.get(user_id=request.user)
+        return render(request, 'ercp_admin/card.html', {'card':card})
+
+    except CardDetail.DoesNotExist:
+        return render(request, "ercp_admin/option.html")
+
+    return None
+
+    
 
         
 @login_required(login_url='/login/')
@@ -115,14 +127,46 @@ def add_concession(request):
              return render(request, 'ercp_admin/formConcession.html', {"warning": "Issue date should be between the next 3 days."})
             
 
+# @login_required(login_url='/login/')
+# def update_concession_form(request,pk):
+
+    
+#     concession = FormDetail.objects.filter(id=request.user)
+#     con = FormDetail.objects.get(pk=concession.id)
+#     return render(request, "ercp_admin/formConcessionUpdate.html", {"con": con})
+
+
+# @login_required(login_url='/login/')
+# def update_concession(request,pk):
+
+    
+#     concession = FormDetail.objects.get(pk=request.user.user_card.id)
+    
+
+#     if request.method == POST:
+
+#         concession.railway_class = request.POST.get('railway_class')
+#         concession.duration = request.POST.get('duration')
+#         concession.issue_date = request.POST.get('issue_date')
+
+#         concession.save()
+
+#     return redirect(student_concession)
+
 
 
 @login_required(login_url='/login/')
 def student_concession(request):
 
-    user_card = CardDetail.objects.get(user_id=request.user)
-    concessions = FormDetail.objects.filter(user_card=user_card)
-    return render(request, 'ercp_admin/concession.html', {'concessions':concessions})
+      try:
+          user_card = CardDetail.objects.get(user_id=request.user)
+          concessions = FormDetail.objects.filter(user_card=user_card)
+          return render(request, 'ercp_admin/concession.html', {'concessions':concessions})
+
+      except FormDetail.DoesNotExist and CardDetail.DoesNotExist:
+          return render(request, "ercp_admin/option.html")
+
+      return None
 
 
 def authenticate_user(request):

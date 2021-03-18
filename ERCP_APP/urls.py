@@ -12,6 +12,8 @@ urlpatterns = [
     path('student_card/',student_card),
     path('concessionForm/',concession_form),
     path('add_concession/',add_concession),
+    # path('update_concession_form/<int:pk>',update_concession_form),
+    # path('update_concession/<int:pk>',update_concession),
     path('student_concession/',student_concession),    
     path('logout/', logout_user),
 ]

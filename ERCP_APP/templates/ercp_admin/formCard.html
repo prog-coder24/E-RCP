@@ -1,5 +1,16 @@
 {% extends 'lognav.html' %}{% load static %} {% block body %}
 <div class="container form-card">
+  {% if warning %}
+  <div
+    class="alert alert-primary text-center alert-dismissible fade show"
+    role="alert"
+  >
+    {{ warning }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
   <h4 class="p-4 mb-5 text-center text-uppercase">
     Railway Concession Card For The Academic Year 2020-2021
   </h4>
