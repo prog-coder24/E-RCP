@@ -9,6 +9,7 @@ from .forms import *
 from django.utils import timezone
 
 # Create your views here.
+
 def home(request):
     return render(request,'home.html')
 
@@ -41,7 +42,6 @@ def card_form(request):
 def add_card(request):
 
     if request.method == 'POST':
-
 
         own_name = request.POST.get('own_name')
         fathers_name = request.POST.get('fathers_name')
@@ -92,13 +92,10 @@ def student_card(request):
 
     return None
 
-    
 
-        
+
 @login_required(login_url='/login/')
 def concession_form(request):
-
-    # ucard = CardDetail.objects.()
     return render(request, 'ercp_admin/formConcession.html')
 
 
@@ -125,33 +122,6 @@ def add_concession(request):
             return redirect(student_concession)
         else:
              return render(request, 'ercp_admin/formConcession.html', {"warning": "Issue date should be between the next 3 days."})
-            
-
-# @login_required(login_url='/login/')
-# def update_concession_form(request,pk):
-
-    
-#     concession = FormDetail.objects.filter(id=request.user)
-#     con = FormDetail.objects.get(pk=concession.id)
-#     return render(request, "ercp_admin/formConcessionUpdate.html", {"con": con})
-
-
-# @login_required(login_url='/login/')
-# def update_concession(request,pk):
-
-    
-#     concession = FormDetail.objects.get(pk=request.user.user_card.id)
-    
-
-#     if request.method == POST:
-
-#         concession.railway_class = request.POST.get('railway_class')
-#         concession.duration = request.POST.get('duration')
-#         concession.issue_date = request.POST.get('issue_date')
-
-#         concession.save()
-
-#     return redirect(student_concession)
 
 
 
