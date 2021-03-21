@@ -35,7 +35,7 @@ def option(request):
 @login_required(login_url='/login/')
 def card_form(request):
     uname = CardDetail.objects.all()
-    return render(request, 'ercp_admin/formCard.html',{'uname':uname})
+    return render(request, 'ercp_admin/Card/formCard.html',{'uname':uname})
 
 
 @login_required(login_url='/login/')
@@ -76,7 +76,7 @@ def add_card(request):
             request.user.save()
             return redirect(student_card)
         else:
-            return render(request, 'ercp_admin/formCard.html', {"warning": "Entered City should match with Source station"} )
+            return render(request, 'ercp_admin/Card/formCard.html', {"warning": "Entered City should match with Source station"} )
 
 
 
@@ -85,7 +85,7 @@ def student_card(request):
 
     try:
         card = CardDetail.objects.get(user_id=request.user)
-        return render(request, 'ercp_admin/card.html', {'card':card})
+        return render(request, 'ercp_admin/Card/card.html', {'card':card})
 
     except CardDetail.DoesNotExist:
         return render(request, "ercp_admin/option.html")
@@ -96,7 +96,7 @@ def student_card(request):
 
 @login_required(login_url='/login/')
 def concession_form(request):
-    return render(request, 'ercp_admin/formConcession.html')
+    return render(request, 'ercp_admin/Form/formConcession.html')
 
 
 @login_required(login_url='/login/')
@@ -105,7 +105,7 @@ def add_concession(request):
     if request.method == 'POST':
 
         if not request.user.has_card:
-           return render(request, 'ercp_admin/formCard.html')
+           return render(request, 'ercp_admin/Card/formCard.html')
 
         railway_class = request.POST.get('railway_class')
         duration = request.POST.get('duration')
@@ -121,7 +121,7 @@ def add_concession(request):
             FormDetail.objects.create(user_card=user_card, railway_class=railway_class, duration=duration, issue_date=issue_date)
             return redirect(student_concession)
         else:
-             return render(request, 'ercp_admin/formConcession.html', {"warning": "Issue date should be between the next 3 days."})
+             return render(request, 'ercp_admin/Form/formConcession.html', {"warning": "Issue date should be between the next 3 days."})
 
 
 
@@ -131,7 +131,7 @@ def student_concession(request):
       try:
           user_card = CardDetail.objects.get(user_id=request.user)
           concessions = FormDetail.objects.filter(user_card=user_card)
-          return render(request, 'ercp_admin/concession.html', {'concessions':concessions})
+          return render(request, 'ercp_admin/Form/concession.html', {'concessions':concessions})
 
       except FormDetail.DoesNotExist and CardDetail.DoesNotExist:
           return render(request, "ercp_admin/option.html")
