@@ -15,4 +15,4 @@
 6. Administrator can export the data from the database according to his requirement into excel or csv files to maintain reports of issued concessions. 
 
 
-### **:camera:** SS
+
