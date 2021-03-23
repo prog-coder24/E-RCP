@@ -28,6 +28,8 @@
 ![InkedCard_LI](https://user-images.githubusercontent.com/70955462/112139202-8259b700-8bf8-11eb-962d-bfb8bd19ae8c.jpg)
 ![Concessionform](https://user-images.githubusercontent.com/70955462/112139243-8dace280-8bf8-11eb-8759-2c8b6c8ab103.png)
 ![concession](https://user-images.githubusercontent.com/70955462/112139257-90a7d300-8bf8-11eb-946b-96f7016fad36.png)
+![about](https://user-images.githubusercontent.com/70955462/112139852-4a06a880-8bf9-11eb-8540-37fcba2a8974.png)
+
 
 
 
