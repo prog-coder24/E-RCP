@@ -17,9 +17,11 @@
 
 ### :camera: ScreenShots
 
+1 | 2
+------------ | -------------
+![Home1](https://user-images.githubusercontent.com/70955462/112138251-4d993000-8bf7-11eb-93a9-b1faf6017532.png) | ![Home2](https://user-images.githubusercontent.com/70955462/112138295-5e49a600-8bf7-11eb-95af-58d07e5cb14c.png)
 
-![Home1](https://user-images.githubusercontent.com/70955462/112138251-4d993000-8bf7-11eb-93a9-b1faf6017532.png)
-![Home2](https://user-images.githubusercontent.com/70955462/112138295-5e49a600-8bf7-11eb-95af-58d07e5cb14c.png)
+
 ![Home3](https://user-images.githubusercontent.com/70955462/112138321-6570b400-8bf7-11eb-8c59-ad1fd93b0b07.png)
 ![Login](https://user-images.githubusercontent.com/70955462/112138373-71f50c80-8bf7-11eb-91c4-b9c6db62b449.png)
 ![Menu1](https://user-images.githubusercontent.com/70955462/112138408-7a4d4780-8bf7-11eb-9c65-3ed21779af7f.png)
