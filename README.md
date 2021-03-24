@@ -17,29 +17,32 @@
 
 ### :camera: ScreenShots
 
-1 | 2
------------- | -------------
-![Home1](https://user-images.githubusercontent.com/70955462/112138251-4d993000-8bf7-11eb-93a9-b1faf6017532.png) | ![Home2](https://user-images.githubusercontent.com/70955462/112138295-5e49a600-8bf7-11eb-95af-58d07e5cb14c.png)
+1 
+------------ 
+![Home1](https://user-images.githubusercontent.com/70955462/112138251-4d993000-8bf7-11eb-93a9-b1faf6017532.png)
 
-3 | 4
------------- | -------------
-![Home3](https://user-images.githubusercontent.com/70955462/112138321-6570b400-8bf7-11eb-8c59-ad1fd93b0b07.png) | ![Login](https://user-images.githubusercontent.com/70955462/112138373-71f50c80-8bf7-11eb-91c4-b9c6db62b449.png)
 
-5 | 6
+2 | 3
 ------------ | -------------
-![Menu1](https://user-images.githubusercontent.com/70955462/112138408-7a4d4780-8bf7-11eb-9c65-3ed21779af7f.png) | ![Menu2](https://user-images.githubusercontent.com/70955462/112138414-7d483800-8bf7-11eb-9be1-6bf8a6aaf92a.png)
+![Home2](https://user-images.githubusercontent.com/70955462/112138295-5e49a600-8bf7-11eb-95af-58d07e5cb14c.png) | ![Home3](https://user-images.githubusercontent.com/70955462/112138321-6570b400-8bf7-11eb-8c59-ad1fd93b0b07.png)
 
-7 | 8
+4 | 5
 ------------ | -------------
-![Create card](https://user-images.githubusercontent.com/70955462/112138451-85a07300-8bf7-11eb-8c93-8d652205a22a.png) | ![InkedCard_LI](https://user-images.githubusercontent.com/70955462/112139202-8259b700-8bf8-11eb-962d-bfb8bd19ae8c.jpg)
+![Login](https://user-images.githubusercontent.com/70955462/112138373-71f50c80-8bf7-11eb-91c4-b9c6db62b449.png) | ![Menu1](https://user-images.githubusercontent.com/70955462/112138408-7a4d4780-8bf7-11eb-9c65-3ed21779af7f.png)
 
-9 | 10
+6 | 7
 ------------ | -------------
-![Concessionform](https://user-images.githubusercontent.com/70955462/112139243-8dace280-8bf8-11eb-8759-2c8b6c8ab103.png) | ![concession](https://user-images.githubusercontent.com/70955462/112139257-90a7d300-8bf8-11eb-946b-96f7016fad36.png)
+![Menu2](https://user-images.githubusercontent.com/70955462/112138414-7d483800-8bf7-11eb-9be1-6bf8a6aaf92a.png) | ![Create card](https://user-images.githubusercontent.com/70955462/112138451-85a07300-8bf7-11eb-8c93-8d652205a22a.png)
 
-11 
-------------
-![about](https://user-images.githubusercontent.com/70955462/112139852-4a06a880-8bf9-11eb-8540-37fcba2a8974.png)
+8 | 9
+------------ | -------------
+![InkedCard_LI](https://user-images.githubusercontent.com/70955462/112139202-8259b700-8bf8-11eb-962d-bfb8bd19ae8c.jpg) | ![Concessionform](https://user-images.githubusercontent.com/70955462/112139243-8dace280-8bf8-11eb-8759-2c8b6c8ab103.png)
+
+10 | 11
+------------ | -------------
+![concession](https://user-images.githubusercontent.com/70955462/112139257-90a7d300-8bf8-11eb-946b-96f7016fad36.png) | ![about](https://user-images.githubusercontent.com/70955462/112139852-4a06a880-8bf9-11eb-8540-37fcba2a8974.png)
+
+
 
 
 
